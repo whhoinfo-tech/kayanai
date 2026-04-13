@@ -1,69 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kayan AI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<title>Kayan AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .container {
-      padding: 80px 20px;
-    }
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background:#0f172a;
+  color:white;
+}
 
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
+.container {
+  max-width:900px;
+  margin:auto;
+  padding:40px;
+  text-align:center;
+}
 
-    p {
-      font-size: 18px;
-      color: #cbd5e1;
-      margin-bottom: 30px;
-    }
+h1 { font-size:40px; }
 
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      background: #3b82f6;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
+.card {
+  background:#1e293b;
+  padding:20px;
+  border-radius:12px;
+  margin-top:20px;
+}
 
-    .btn:hover {
-      background: #2563eb;
-    }
+input, button {
+  padding:10px;
+  margin:10px;
+  width:80%;
+  border-radius:8px;
+  border:none;
+}
 
-    .footer {
-      margin-top: 80px;
-      font-size: 14px;
-      color: #94a3b8;
-    }
-  </style>
+button {
+  background:#3b82f6;
+  color:white;
+  cursor:pointer;
+}
+
+button:hover {
+  background:#2563eb;
+}
+
+.hidden { display:none; }
+
+.links a {
+  margin:10px;
+  color:#93c5fd;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>Kayan AI 🚀</h1>
-    <p>Automate your TikTok video publishing بسهولة وبشكل احترافي</p>
+<div class="container">
 
-    <a class="btn" href="terms.html">Terms of Service</a>
-    <a class="btn" href="privacy.html">Privacy Policy</a>
-  </div>
+<h1>Kayan AI 🚀</h1>
+<p>Automate TikTok video publishing بسهولة</p>
 
-  <div class="footer">
-    © 2026 Kayan AI - All rights reserved
-  </div>
+<!-- LOGIN -->
+<div class="card" id="loginBox">
+  <h2>Login</h2>
+  <input type="text" placeholder="Username"><br>
+  <input type="password" placeholder="Password"><br>
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- DASHBOARD -->
+<div class="card hidden" id="dashboard">
+  <h2>Upload Video</h2>
+
+  <input type="text" placeholder="Video Title"><br>
+  <input type="text" placeholder="Description"><br>
+  <input type="file"><br>
+
+  <button onclick="upload()">Publish to TikTok</button>
+
+  <p id="status"></p>
+</div>
+
+<div class="links">
+  <a href="terms.html">Terms</a>
+  <a href="privacy.html">Privacy</a>
+</div>
+
+</div>
+
+<script>
+function login(){
+  document.getElementById("loginBox").style.display="none";
+  document.getElementById("dashboard").style.display="block";
+}
+
+function upload(){
+  document.getElementById("status").innerText =
+  "✅ Video sent to TikTok API successfully (simulation)";
+}
+</script>
 
 </body>
 </html>
